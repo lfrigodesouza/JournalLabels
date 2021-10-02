@@ -1,5 +1,6 @@
 ﻿using JournalLabels;
 
+Console.WriteLine("-------------------------------------------------------------");
 Console.WriteLine("Iniciando gerador de labels para o Journal");
 Console.WriteLine("Informe o ano desejado");
 var inputYear = Console.ReadLine();
@@ -12,6 +13,7 @@ if (!int.TryParse(inputYear, out year))
 }
 
 Console.WriteLine($"Gerando labels para o ano {year}");
+Console.WriteLine("-------------------------------------------------------------");
 var filePath = $"C:\\Temp\\journal_labels_{year}.txt";
 if (File.Exists(filePath)) File.Delete(filePath);
 var sw = new StreamWriter(filePath);
@@ -37,5 +39,6 @@ while (date.Year == year)
 }
 
 sw.Close();
+Console.WriteLine("-------------------------------------------------------------");
 Console.WriteLine("Labels gerados");
 Console.WriteLine(filePath);
